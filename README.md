@@ -3,7 +3,7 @@
 ## Platforms and DB:
 - Python Django web framework is used to built this project.
 - For REST API, Django REST framework is used. 
-- For database, PostgreSQL is used.
+- For database, SQLite3 is used.
 
 ## Details of the project:
 - This site is built to save memes that are entered.
