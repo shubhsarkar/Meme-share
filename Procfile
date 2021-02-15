@@ -1,0 +1,1 @@
+web: gunicorn Crio.wsgi:application --log-file -

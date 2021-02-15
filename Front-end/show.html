@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+    {% block content %}
+    {% for meme in memes %}
+    
+        <div class="container display-meme">
+            <p id="display-name"><b>{{meme.owner}}</b></p>
+            <p id="display-caption">{{meme.cap}}</p>
+            <div id="display-img">
+                <img class="text-center" src="{{meme.url}}">
+            </div>
+        </div>
+    {% endfor %}
+
+    {% endblock %}
+

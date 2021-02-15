@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMeme</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <header>
+        <h1>Meme Stream</h1>    
+    </header>
+
+    <form method="POST" action="submit">
+        
+        {% csrf_token %}
+        
+        <p id="name">Meme Owner</p>
+        <div class="input-group mb-3">
+            <input name="form-name" type="text" class="form-control" placeholder="Enter your fullname" aria-label="Enter your fullname" aria-describedby="basic-addon2" required>
+            <div class="input-group-append">
+            </div>
+        </div>
+
+        <p id="caption">Caption</p>
+        <div class="input-group mb-3">
+            <input name="form-caption" type="text" class="form-control" placeholder="Be Creative!" aria-label="Be Creative!" aria-describedby="basic-addon2" required>
+            <div class="input-group-append">
+            </div>
+        </div>
+
+        <label id="url">Meme URL</label>
+        <div class="input-group mb-3">
+            <input name="form-url" type="text" class="form-control" placeholder="Enter meme URL" aria-label="Enter meme URL" aria-describedby="basic-addon3" required>
+        </div>
+
+        <div class="text-center">
+            <button id="submit-button" type="sumbit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+    <hr>
+
+
+    <div class="display-section">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+    <!-- <script>
+        $("#submit-button").click(function(){
+            var name = $("#form-name").val();
+            var caption = $("#form-caption").val();
+            var url = $("#form-url").val();
+            if(name == "" || caption == "" || url == ""){
+                swal({
+                    title: "Field Empty!",
+                    text: "Please check the missing field(s)!",
+                    icon: "warning",
+                });
+            }
+        })
+    </script> -->
+
+</body>
+</html>
